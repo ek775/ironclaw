@@ -57,6 +57,7 @@ pub fn has_native_thinking(model: &str) -> bool {
         "qwq",
         "deepseek-r1",
         "deepseek-reasoner",
+        "gemma4",
         "glm-z1",
         "glm-4-plus",
         "glm-5",
@@ -207,6 +208,13 @@ mod tests {
         assert!(has_native_thinking("minimax-m2.5-139b"));
         assert!(has_native_thinking("MiniMax-M2.7"));
         assert!(has_native_thinking("MiniMax-M2.7-highspeed"));
+    }
+
+    #[test]
+    fn detects_gemma4_variants() {
+        assert!(has_native_thinking("gemma4"));
+        assert!(has_native_thinking("gemma4:26b"));
+        assert!(has_native_thinking("gemma4:31b"));
     }
 
     #[test]
